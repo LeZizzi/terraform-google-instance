@@ -1,9 +1,10 @@
-resource "google_compute_instance" "database" {
+resource "google_compute_instance" "default" {
   name         = "rbuild0"
   machine_type = "f1-micro"
-  zone         = "us-west1-a"
+  region       = "europe-west2"
+  zone         = "europe-west2-a"
 
-  tags = ["db"]
+  tags = ["web"]
 
   boot_disk {
     initialize_params {
