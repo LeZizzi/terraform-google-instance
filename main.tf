@@ -8,12 +8,14 @@ resource "google_compute_instance" "default" {
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-os-cloud/ubuntu-1804-lts"
+      image = "debian-9-stretch-v20191121"
     }
   }
 
   // Local SSD disk
-  scratch_disk {}
+  scratch_disk {
+
+  }
 
   network_interface {
     network = "default"
@@ -24,7 +26,7 @@ resource "google_compute_instance" "default" {
   }
 
   metadata = {
-    sshKeys = "ubuntu:${file(var.ssh_public_key_filepath)}"
+    sshkeys= "debian:${file(var.ssh_public_key_filepath)}"
   }
 
 }
