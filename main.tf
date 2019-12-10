@@ -20,8 +20,4 @@ resource "google_compute_instance" "webserver" {
   }
 
 
-  metadata = {
-    sshkeys= "debian:${file(var.ssh_public_key_filepath)}"
-  }
-
 }
