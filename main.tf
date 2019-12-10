@@ -1,6 +1,6 @@
 resource "google_compute_instance" "database" {
-  name         = "database"
-  machine_type = "n1-standard-2"
+  name         = "rbuild0"
+  machine_type = "f1-micro"
   zone         = "us-west1-a"
 
   tags = ["db"]
